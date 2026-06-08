@@ -25,3 +25,24 @@ Different cloud resources consume energy in different ways. CPU compute, storage
 3. What is the most carbon-intensive service type in your dataset?
 
 The most carbon-intensive service type is the one with the highest total CO2e value after grouping the dataset by service_type and summing the co2e_kg column. Based on the analysis performed in the dataset, the service category with the largest CO2e contribution should be reported as the most carbon-intensive service.
+
+# Hurdle 2 - Concept Check
+1. Difference between Azure Blob Storage and Azure SQL Database?
+
+Azure Blob Storage stores unstructured files such as CSVs, images, backups, logs, and model artifacts. It is cost-effective and scalable.
+
+Azure SQL Database stores structured relational data in tables and supports SQL queries, transactions, indexing, and relationships.
+
+Use Blob Storage for files and datasets. Use Azure SQL Database when data must be queried, filtered, and managed relationally.
+
+2. What is LRS replication and what are its limitations vs GRS?
+
+LRS (Locally Redundant Storage) stores three copies of data within a single Azure datacenter. It provides protection against local hardware failures at low cost.
+
+GRS (Geo-Redundant Storage) stores additional copies in a secondary geographic region, providing disaster recovery if an entire region fails.
+
+Limitation of LRS: it does not protect against regional outages.
+
+3. Why is it a security risk to hardcode a connection string in source code?
+
+Hardcoding connection strings exposes credentials to anyone with access to the code repository. If pushed to GitHub, attackers could access cloud resources, read data, modify resources, or incur costs. Environment variables or .env files should be used instead.
