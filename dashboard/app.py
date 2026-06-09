@@ -39,6 +39,19 @@ st.line_chart(
     daily_df.set_index("date")["co2e_kg"]
 )
 
+#updated
+green = requests.get(
+    "http://127.0.0.1:8000/green-score"
+).json()
+
+st.subheader("🌱 Green Score")
+
+st.success(
+    f"{green['grade']} | {green['gate']}"
+)
+
+st.write(green["action"])
+
 # Forecast
 if st.button("Show Forecast"):
 

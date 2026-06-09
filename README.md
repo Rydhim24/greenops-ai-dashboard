@@ -60,6 +60,20 @@ Lag features provide information about past observations, allowing the model to 
 
 RMSE (Root Mean Squared Error) measures the average magnitude of prediction errors by calculating the square root of the mean squared differences between actual and predicted values. Lower RMSE values indicate better predictive accuracy. RMSE is useful because it penalizes larger errors more heavily and provides an interpretable metric in the same units as the target variable.
 
-### 4. What are the limitations of using Linear Regression for forecasting cloud emissions?
+4. What are the limitations of using Linear Regression for forecasting cloud emissions?
 
 Linear Regression assumes a linear relationship between input features and the target variable. Cloud emissions may exhibit nonlinear behavior, seasonal trends, sudden workload spikes, and complex interactions that linear models cannot fully capture. More advanced models such as Random Forests, Gradient Boosting, XGBoost, or LSTM networks may provide better forecasting performance for complex datasets.
+
+# Hurdle 4 – Concept Check
+1. What is REST and why is it the standard for building APIs?
+
+REST (Representational State Transfer) is an architectural style for designing web APIs. It uses standard HTTP methods such as GET, POST, PUT, and DELETE to communicate between clients and servers. REST is widely adopted because it is simple, scalable, stateless, and compatible with almost every programming language and platform.
+
+2. What is the difference between a GET and a POST request? Which would you use to submit new billing data?
+
+A GET request is used to retrieve data from a server without modifying any resources. A POST request is used to send new data to the server and create or update resources. To submit new billing data, a POST request should be used because it transfers data to the server for processing and storage.
+
+3. Why run the API and dashboard as two separate processes rather than one combined script?
+
+Running the API and dashboard separately follows the separation-of-concerns principle. The API handles data processing, business logic, and model access, while the dashboard focuses on user interface and visualization. This architecture improves maintainability, scalability, testing, and deployment flexibility because either component can be updated independently.
+
