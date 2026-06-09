@@ -46,3 +46,20 @@ Limitation of LRS: it does not protect against regional outages.
 3. Why is it a security risk to hardcode a connection string in source code?
 
 Hardcoding connection strings exposes credentials to anyone with access to the code repository. If pushed to GitHub, attackers could access cloud resources, read data, modify resources, or incur costs. Environment variables or .env files should be used instead.
+
+# Hurdle 3 – Concept Check
+1. Why is a chronological train/test split required for time-series forecasting?
+
+In time-series forecasting, data points are dependent on time. A chronological train/test split ensures that the model is trained only on past data and evaluated on future data. Randomly shuffling the dataset would leak future information into the training process, resulting in unrealistic performance estimates.
+
+2. What is the purpose of lag features and rolling averages in forecasting?
+
+Lag features provide information about past observations, allowing the model to learn temporal patterns and dependencies. Rolling averages smooth short-term fluctuations and highlight longer-term trends, helping the model make more stable and accurate predictions.
+
+3. What does RMSE measure and why is it useful?
+
+RMSE (Root Mean Squared Error) measures the average magnitude of prediction errors by calculating the square root of the mean squared differences between actual and predicted values. Lower RMSE values indicate better predictive accuracy. RMSE is useful because it penalizes larger errors more heavily and provides an interpretable metric in the same units as the target variable.
+
+### 4. What are the limitations of using Linear Regression for forecasting cloud emissions?
+
+Linear Regression assumes a linear relationship between input features and the target variable. Cloud emissions may exhibit nonlinear behavior, seasonal trends, sudden workload spikes, and complex interactions that linear models cannot fully capture. More advanced models such as Random Forests, Gradient Boosting, XGBoost, or LSTM networks may provide better forecasting performance for complex datasets.
