@@ -1,4 +1,67 @@
-# greenops-ai-dashboard
+# GreenOps AI Dashboard
+
+## Overview
+
+GreenOps AI Dashboard is a cloud sustainability monitoring application that helps evaluate infrastructure carbon impact and provides sustainability recommendations.
+
+## Features
+
+* FastAPI backend deployed on Azure App Service
+* Health monitoring endpoint
+* Green Score calculation endpoint
+* Automated CI/CD using GitHub Actions
+* Azure cloud deployment
+
+## Architecture
+
+User → Streamlit Dashboard → FastAPI Backend → Green Score Engine
+
+## API Endpoints
+
+### Health Check
+
+GET /health
+
+Response:
+{
+"status": "ok"
+}
+
+### Green Score
+
+GET /green-score
+
+Response:
+{
+"grade": "A",
+"avg_daily_co2e": 0.04,
+"action": "Excellent — no action needed",
+"gate": "PASS"
+}
+
+## Deployment
+
+Azure App Service URL:
+
+https://greenops-api-2023567320-hvbebda9eqdzg2ec.uaenorth-01.azurewebsites.net
+
+Swagger Documentation:
+
+https://greenops-api-2023567320-hvbebda9eqdzg2ec.uaenorth-01.azurewebsites.net/docs
+
+## Technologies Used
+
+* Python
+* FastAPI
+* Streamlit
+* Azure App Service
+* GitHub Actions
+* Azure for Students
+
+## Author
+
+Riddhima Sharma
+
 
 # Hurdle 0 – Concept Check
 1. What is a Resource Group in Azure, and why do we use one?
@@ -76,4 +139,22 @@ A GET request is used to retrieve data from a server without modifying any resou
 3. Why run the API and dashboard as two separate processes rather than one combined script?
 
 Running the API and dashboard separately follows the separation-of-concerns principle. The API handles data processing, business logic, and model access, while the dashboard focuses on user interface and visualization. This architecture improves maintainability, scalability, testing, and deployment flexibility because either component can be updated independently.
+
+# Hurdle 5 - Concept Check
+1. What is Shift-Left and how does Green Score apply it?
+
+Shift-Left is a DevOps practice where quality, security, and sustainability checks are performed early in the development lifecycle rather than after deployment. The Green Score applies this principle by evaluating predicted carbon emissions before deployment and warning developers if the application is environmentally inefficient.
+
+2. What is Azure App Service and how is it different from a VM?
+
+Azure App Service is a Platform as a Service (PaaS) offering that allows developers to deploy applications without managing servers, operating systems, or infrastructure. A Virtual Machine (IaaS) requires manual management of the OS, networking, updates, and scaling, whereas App Service handles these automatically.
+
+3. If a project scores F, what infrastructure changes would you recommend first?
+Right-size oversized VMs
+Reduce idle resources
+Use autoscaling
+Optimize database queries
+Reduce storage and data transfer
+Move workloads to more energy-efficient cloud services
+Monitor and eliminate unused infrastructure
 
