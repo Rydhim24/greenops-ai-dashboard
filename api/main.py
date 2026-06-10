@@ -22,6 +22,12 @@ app = FastAPI(title="GreenOps API")
 
 # model = joblib.load("model/co2e_forecast_model.pkl")
 
+@app.get("/")
+def home():
+    return {
+        "message": "GreenOps API is running successfully",
+        "docs": "/docs"
+    }
 
 @app.get("/health")
 def health():
